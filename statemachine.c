@@ -99,7 +99,12 @@ STATE estado_0[]=
  
  int GetResValue(ALLEGRO_EVENT ev,char * value)
  {
+     ALLEGRO_EVENT_QUEUE *res_queue = NULL;
+     ALLEGRO_FONT *font = al_load_ttf_font("pirulen.ttf",12,0 );
+     int respos;
      
+     res_queue = al_create_event_queue();
+     al_register_event_source(name_queue, al_get_keyboard_event_source());
  }
  
  
@@ -150,6 +155,7 @@ STATE estado_0[]=
          }
      }
      
+     al_destroy_event_queue(name_queue);
      
  }
  
